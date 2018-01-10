@@ -1,0 +1,70 @@
+﻿<Window x:Class="ADO.NET.HW2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ADO.NET.HW2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <WrapPanel Margin="20, 10,0,0">
+                <Label Height="30" Width="100" >Provider</Label>
+                <ComboBox x:Name="SelectingComboBox" SelectionChanged="SelectingComboBox_SelectionChanged" SelectedIndex="0"  Width="100">
+                    <ComboBoxItem>choose</ComboBoxItem>
+                    <ComboBoxItem  >SQLClient</ComboBoxItem>
+                    <ComboBoxItem> Access</ComboBoxItem>
+                </ComboBox>
+            </WrapPanel>
+            <WrapPanel Visibility="Visible" Grid.Row="1" Margin="20, 10,0,0">
+                <Label Height="30" Width="100" >DataBase:</Label>
+                <TextBox Width="100"></TextBox>
+                <Button x:Name="Open" Width="30">?</Button>
+            </WrapPanel>
+        </Grid>
+        
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <WrapPanel Visibility="Visible" Grid.Row="0"  Margin="20, 10,0,0">
+                <Label Height="30" Width="100" >Username:</Label>
+                <TextBox x:Name="Login" Width="100"></TextBox>
+            </WrapPanel>
+            <WrapPanel Visibility="Visible" Grid.Row="1"  Margin="20, 10,0,0">
+                <Label Height="30" Width="100" >Password:</Label>
+                <TextBox x:Name="TextBoxPassword" Width="100"></TextBox>
+
+            </WrapPanel>
+
+            
+            
+        </Grid>
+
+        <Button x:Name="ConnectButton" Width="150" Height="20" Grid.Row="1" Grid.Column="0">Connect</Button>
+        <TextBlock Background="AliceBlue" Margin="10" x:Name="ConnectionStringTextBlock" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap">Connection String</TextBlock>
+        <TextBox TextWrapping="Wrap" ScrollViewer.CanContentScroll="True" Background="AliceBlue" Margin="10" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">Script</TextBox>
+        <Label Background="AliceBlue" Margin="10" x:Name="MessageStatusBar" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" >StatusMessage</Label>
+        <Button x:Name="ExecuteButton" Grid.Row="5" Grid.Column="1"> Execute </Button>
+        <StatusBar Background="AliceBlue"  x:Name="RealStatusBar" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" >Status</StatusBar>
+    </Grid> 
+</Window>
